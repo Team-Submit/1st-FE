@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 function MainPage() {
   return (
     <MainContainer>
-      <BgTicket>
+      <TopBgTicket>
         <CircleWarp>
           <Circle></Circle>
           <Circle></Circle>
@@ -11,8 +11,8 @@ function MainPage() {
           <Circle></Circle>
           <Circle></Circle>
         </CircleWarp>
-      </BgTicket>
-      <BgTicket>
+      </TopBgTicket>
+      <BottomBgTicket>
         <CircleWarp>
           <Circle></Circle>
           <Circle></Circle>
@@ -20,7 +20,7 @@ function MainPage() {
           <Circle></Circle>
           <Circle></Circle>
         </CircleWarp>
-      </BgTicket>
+      </BottomBgTicket>
     </MainContainer>
   );
 }
@@ -33,7 +33,16 @@ const MainContainer = styled.div`
   height: 100%;
 `;
 
-const BgTicket = styled.b`
+const TopBgTicket = styled.b`
+  display: flex;
+  background: #ffd670;
+  width: 1200px;
+  height: 400px;
+  margin-top: 80px;
+  border-radius: 10px 0px 0px 10px;
+`;
+
+const BottomBgTicket = styled.b`
   display: flex;
   background: #ffd670;
   width: 1200px;
@@ -45,14 +54,14 @@ const BgTicket = styled.b`
 const CircleWarp = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: -15px;
+  justify-content: space-evenly;
+  margin-left: -18px;
 `;
 
 const Circle = styled.div`
   background: #fff;
   width: 40px;
   height: 40px;
-  margin-top: 32px;
   border-radius: 50%;
 `;
 

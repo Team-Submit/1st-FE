@@ -1,9 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import RecommendPage from "./components/pages";
 
 function Router() {
   return (
     <BrowserRouter>
-      <Routes></Routes>
+      <Routes>
+        <Route path="/main" element={<RecommendPage />} />
+      </Routes>
     </BrowserRouter>
   );
 }

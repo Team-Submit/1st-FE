@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import heartFilled from '../src/img/heart-filled.png';
-import heartOutline from '../src/img/heart-outline.png';
+import React, { useState } from "react";
+import styled from "styled-components";
+import heartFilled from "../common/img/heart-filled.png";
+import heartOutline from "../common/img/heart-outline.png";
 
 const HeartButton = styled.button`
+  position: absolute;
+  margin-left: 80px;
+  margin-top: -30px;
   width: 24px;
   height: 22px;
   background-color: transparent;
@@ -17,7 +20,7 @@ const HeartIcon = styled.img`
   height: 22px;
 `;
 
-const App = () => {
+const Zzim = (disabled) => {
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
@@ -26,11 +29,11 @@ const App = () => {
 
   return (
     <div>
-      <HeartButton onClick={handleClick}>
+      <HeartButton onClick={handleClick} value={0}>
         <HeartIcon src={clicked ? heartFilled : heartOutline} alt="Heart" />
       </HeartButton>
     </div>
   );
 };
 
-export default App;
+export default Zzim;

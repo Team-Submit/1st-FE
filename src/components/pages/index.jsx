@@ -1,13 +1,20 @@
 import { styled } from "styled-components";
-import poster from "../../image/Group 106.png";
+import poster from "../common/img/Group 106.png";
+import CustomButton from "../common/zzim";
+
+const disabled = true;
 
 function MainPage() {
   const Circles = Array.from({ length: 5 }, (_, index) => (
     <Circle key={index} />
   ));
   const Posters = Array.from({ length: 4 }, (_, index) => (
-    <Poster key={index} src={poster} alt={`Poster ${index + 1}`} />
+    <Poster key={index}>
+      <img src={poster} alt={`Poster ${index + 1}`} />
+      <CustomButton disabled={disabled} value=""></CustomButton>
+    </Poster>
   ));
+
   return (
     <MainContainer>
       <TopBgTicket>
@@ -22,10 +29,20 @@ function MainPage() {
   );
 }
 
-const Poster = styled.img`
+const StyledCustomButton = styled.button`
+  margin: 100px;
+`;
+
+const Poster = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 30px 0px 10px 80px;
   width: 200px;
   height: 350px;
+
+  ${StyledCustomButton} {
+  }
 `;
 
 const MainContainer = styled.div`

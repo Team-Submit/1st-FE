@@ -1,16 +1,29 @@
 import { styled } from "styled-components";
+import { useNavigate } from "react-router-dom";
+
 import recoImg from "../common/img/recomend.png";
 
 function StartPage() {
+  const navigate = useNavigate();
+
+  const goToSign = () => {
+    navigate("/SignIn");
+  };
+
+  const goToLogIn = () => {
+    navigate("/LogIn"); 
+  };
+
   return (
     <MainDiv>
       <BgImg>
         <PLogdiv>
           <TextLog>로그인</TextLog> 후 이용이 가능합니다
-          <LogInButton>로그인</LogInButton>
+          <LogInButton onClick={goToLogIn}>로그인</LogInButton>
         </PLogdiv>
         <PSigndiv>
-          아직 회원이 아니신가요? <SignUpButton>가입하기</SignUpButton>
+          아직 회원이 아니신가요?
+          <SignUpButton onClick={goToSign}>가입하기</SignUpButton>
         </PSigndiv>
       </BgImg>
     </MainDiv>

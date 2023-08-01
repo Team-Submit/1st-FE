@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import heartFilled from '../src/img/heart-filled.png';
-import heartOutline from '../src/img/heart-outline.png';
+import React, { useState } from "react";
+import styled from "styled-components";
+import heartFilled from "../common/img/heart-filled.png";
+import heartOutline from "../common/img/heart-outline.png";
 
 const HeartButton = styled.button`
+  position: absolute;
+  margin-left: 80px;
+  margin-top: -30px;
   width: 24px;
   height: 22px;
   background-color: transparent;
@@ -17,11 +20,13 @@ const HeartIcon = styled.img`
   height: 22px;
 `;
 
-const App = () => {
+const ZZim = () => {
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
     setClicked(!clicked); // Toggle the clicked state
+    if (!clicked) alert("찜이 되었습니다");
+    else alert("찜이 취소되었습니다");
   };
 
   return (
@@ -33,4 +38,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default ZZim;

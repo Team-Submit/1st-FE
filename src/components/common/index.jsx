@@ -1,6 +1,13 @@
 import { styled } from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 function MainHeader() {
+  const navigate = useNavigate();
+
+  const goToMainPage = () => {
+    navigate("/main");
+  };
+
   return (
     <>
       <header>
@@ -28,7 +35,7 @@ function MainHeader() {
           </ProfileSet>
           <AddSeparatingLine></AddSeparatingLine>
           <LickButtonSet>
-            <FeaturedMoviesOfTheMonthBtn>
+            <FeaturedMoviesOfTheMonthBtn onClick={goToMainPage}>
               이달의 영화 추천
             </FeaturedMoviesOfTheMonthBtn>
             <TheaterAroundBtn>주변 극장</TheaterAroundBtn>

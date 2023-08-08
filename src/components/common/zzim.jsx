@@ -20,7 +20,7 @@ const HeartIcon = styled.img`
   height: 22px;
 `;
 
-const ZZim = () => {
+const Zzim = (disabled) => {
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
@@ -31,11 +31,11 @@ const ZZim = () => {
 
   return (
     <div>
-      <HeartButton onClick={handleClick}>
+      <HeartButton onClick={handleClick} value={0}>
         <HeartIcon src={clicked ? heartFilled : heartOutline} alt="Heart" />
       </HeartButton>
     </div>
   );
 };
 
-export default ZZim;
+export default Zzim;

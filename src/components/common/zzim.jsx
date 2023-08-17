@@ -25,6 +25,8 @@ const Zzim = (disabled) => {
 
   const handleClick = () => {
     setClicked(!clicked); // Toggle the clicked state
+    if (!clicked) alert("찜이 되었습니다");
+    else alert("찜이 취소되었습니다");
   };
 
   return (
